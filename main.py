@@ -23,12 +23,13 @@ def get_slot_machine_spin(rows, cols, symbols):
     for symbol, symbol_count in symbols.items():
         #"_" is an ANNONYMOUS VARIABLE used for when you do not need iteration value. Used to prevent unused variables
         for _ in range(symbol_count):
+            #".append" works similar ".push" in Javascript
             all_symbols.append(symbol)
 
     columns = [[], [], []]
     for col in range(cols):
         column = []
-        #Slice operator to create a copy of the all_symbols list
+        #"[:] is a slice operator to create a copy of the all_symbols list
         current_symbols = all_symbols[:]
         for row in range(rows):
             value = random.choice(current_symbols)
